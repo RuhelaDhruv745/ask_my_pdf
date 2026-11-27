@@ -15,8 +15,8 @@ from chromadb.config import Settings
 from pypdf import PdfReader
 from sentence_transformers import SentenceTransformer
 
-CHUNK_SIZE = 1600  # maximum characters per chunk
-CHUNK_OVERLAP = 200  # characters shared by neighbouring chunks (less than half of CHUNK_SIZE)
+CHUNK_SIZE = 800  # maximum characters per chunk
+CHUNK_OVERLAP = 120  # characters shared by neighbouring chunks (less than half of CHUNK_SIZE)
 
 PROJECT_DIR = Path(__file__).resolve().parent
 DATA_DIR = PROJECT_DIR / "data"
