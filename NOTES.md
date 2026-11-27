@@ -1,0 +1,1 @@
+1,600/200 gave 34 chunks with 23 over the model's limit, and 800/120 gave 59 chunks with none over it. In step 5 you'll replace this with measured hit-rate numbers, which become your failure story.
