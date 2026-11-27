@@ -6,6 +6,7 @@ Run with: python retriever.py "your question"
 import argparse
 import sys
 
+import numpy as np
 from chromadb.errors import NotFoundError
 
 from ingest import COLLECTION_NAME, embed, get_client
@@ -16,6 +17,9 @@ def retrieve(query: str, k: int = 4) -> list[dict]:
 
     Each result has text, source, page and distance. Distance is cosine
     distance, so lower means a closer match.
+
+    The search is exact: the question is compared with every stored chunk.
+    Chroma's approximate query sometimes missed close matches in this project.
     """
     if not query.strip():
         raise ValueError("The query is empty.")
@@ -27,25 +31,26 @@ def retrieve(query: str, k: int = 4) -> list[dict]:
         collection = get_client().get_collection(COLLECTION_NAME, embedding_function=None)
     except NotFoundError:
         raise RuntimeError(not_indexed) from None
-    count = collection.count()
-    if count == 0:
+    stored = collection.get(include=["embeddings", "documents", "metadatas"])
+    if not stored["ids"]:
         raise RuntimeError(not_indexed)
 
-    results = collection.query(
-        query_embeddings=embed([query]),
-        n_results=min(k, count),
-        include=["documents", "metadatas", "distances"],
-    )
+    # Cosine distance = 1 - cosine similarity.
+    vectors = np.asarray(stored["embeddings"], dtype=float)
+    question = np.asarray(embed([query])[0], dtype=float)
+    norms = np.linalg.norm(vectors, axis=1) * np.linalg.norm(question)
+    distances = 1 - (vectors @ question) / norms
+
+    # Sort by distance, then by ID so that ties always come out in the same order.
+    closest = np.lexsort((stored["ids"], distances))[:k]
     return [
         {
-            "text": text,
-            "source": metadata["source"],
-            "page": metadata["page"],
-            "distance": distance,
+            "text": stored["documents"][i],
+            "source": stored["metadatas"][i]["source"],
+            "page": stored["metadatas"][i]["page"],
+            "distance": float(distances[i]),
         }
-        for text, metadata, distance in zip(
-            results["documents"][0], results["metadatas"][0], results["distances"][0]
-        )
+        for i in closest
     ]
 
 

@@ -1,0 +1,20 @@
+{"question": "What is the longest time work should stay unmerged?", "expected_source": "Hackathon Playbook 8-Hour AI Build with Parallel Git Worktrees.pdf", "expected_pages": [7]}
+{"question": "At what hour is the feature freeze?", "expected_source": "Hackathon Playbook 8-Hour AI Build with Parallel Git Worktrees.pdf", "expected_pages": [1, 7]}
+{"question": "Which API port does P2 use?", "expected_source": "Hackathon Playbook 8-Hour AI Build with Parallel Git Worktrees.pdf", "expected_pages": [2]}
+{"question": "Which event types does the /chat endpoint stream?", "expected_source": "Hackathon Playbook 8-Hour AI Build with Parallel Git Worktrees.pdf", "expected_pages": [3]}
+{"question": "How many minutes should everyone spend reading the problem statement at the start?", "expected_source": "Hackathon Playbook 8-Hour AI Build with Parallel Git Worktrees.pdf", "expected_pages": [2]}
+{"question": "How many questions should the golden set contain?", "expected_source": "Hackathon Playbook 8-Hour AI Build with Parallel Git Worktrees.pdf", "expected_pages": [6, 9]}
+{"question": "What should the team do if the LLM provider hits a rate limit?", "expected_source": "Hackathon Playbook 8-Hour AI Build with Parallel Git Worktrees.pdf", "expected_pages": [11]}
+{"question": "Which Azure services can the app be deployed to?", "expected_source": "Hackathon Playbook 8-Hour AI Build with Parallel Git Worktrees.pdf", "expected_pages": [5]}
+{"question": "What should the third demo query show?", "expected_source": "Hackathon Playbook 8-Hour AI Build with Parallel Git Worktrees.pdf", "expected_pages": [8]}
+{"question": "How many MCP servers should be enabled at most?", "expected_source": "Hackathon Playbook 8-Hour AI Build with Parallel Git Worktrees.pdf", "expected_pages": [10]}
+{"question": "Which environment variable selects the LLM provider?", "expected_source": "Hackathon Playbook 8-Hour AI Build with Parallel Git Worktrees.pdf", "expected_pages": [4, 12]}
+{"question": "Who owns the slide deck from the start?", "expected_source": "Hackathon Playbook 8-Hour AI Build with Parallel Git Worktrees.pdf", "expected_pages": [9]}
+{"question": "What is the recommended test-day order?", "expected_source": "GILP OA Prep GK & Current Affairs Topic Map.pdf", "expected_pages": [9]}
+{"question": "When and where was the BRICS summit India chaired in 2026?", "expected_source": "GILP OA Prep GK & Current Affairs Topic Map.pdf", "expected_pages": [5]}
+{"question": "When did India and Mexico launch trade agreement talks?", "expected_source": "GILP OA Prep GK & Current Affairs Topic Map.pdf", "expected_pages": [5]}
+{"question": "How much time does the daily plan give to static GK?", "expected_source": "GILP OA Prep GK & Current Affairs Topic Map.pdf", "expected_pages": [1]}
+{"question": "What is the capital of France?", "expected_source": "", "expected_pages": []}
+{"question": "How do I bake sourdough bread?", "expected_source": "", "expected_pages": []}
+{"question": "Who won the 2018 FIFA World Cup?", "expected_source": "", "expected_pages": []}
+{"question": "How do I set up Kubernetes autoscaling?", "expected_source": "", "expected_pages": []}
